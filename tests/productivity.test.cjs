@@ -5,7 +5,7 @@ const os=require('node:os');
 const path=require('node:path');
 const {execFileSync}=require('node:child_process');
 const {Recovery,inside,sanitizeDiagnostic,inspectProject}=require('../desktop/productivity.cjs');
-function fixture(t){const base=fs.mkdtempSync(path.join(os.tmpdir(),'boau-test-'));t.after(()=>fs.rmSync(base,{recursive:true,force:true}));const root=path.join(base,'project');fs.mkdirSync(root);execFileSync('git',['init',root],{windowsHide:true});return {base,root,project:{id:'test',path:root}};}
+function fixture(t){const base=fs.mkdtempSync(path.join(os.tmpdir(),'boau-test-'));t.after(()=>fs.rmSync(base,{recursive:true,force:true}));const root=path.join(base,'project');fs.mkdirSync(root);const canonicalRoot=fs.realpathSync(root);execFileSync('git',['init',canonicalRoot],{windowsHide:true});return {base,root:canonicalRoot,project:{id:'test',path:canonicalRoot}};}
 test('restore preserves pre-existing edits, untracked files and ignored content; creates undo point',async t=>{
  const {base,root,project}=fixture(t);const recovery=new Recovery(path.join(base,'recovery'));
  fs.writeFileSync(path.join(root,'.gitignore'),'ignored.txt\n');fs.writeFileSync(path.join(root,'file.txt'),'before');fs.writeFileSync(path.join(root,'ignored.txt'),'private');
