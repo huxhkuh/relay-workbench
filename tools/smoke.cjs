@@ -1,7 +1,7 @@
 const { _electron } = require(process.env.PLAYWRIGHT_MODULE || 'playwright');
 const fs=require('node:fs'),path=require('node:path'),os=require('node:os');
 (async()=>{
- const profile=fs.mkdtempSync(path.join(os.tmpdir(),'boau-profile-'));
+ const profile=fs.realpathSync.native(fs.mkdtempSync(path.join(os.tmpdir(),'boau-profile-')));
  const app=await _electron.launch({executablePath:path.resolve(__dirname,'../release/Boau-Code-'+require('../package.json').version+'-Windows-x64/Boau-Code.exe'),args:['--user-data-dir='+profile],timeout:30000});
  try {
  const actual=await app.evaluate(({app})=>app.getPath('userData'));console.log('PROFILE',actual);

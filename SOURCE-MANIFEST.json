@@ -241,7 +241,7 @@
     },
     {
       "path": "tools/smoke.cjs",
-      "sha256": "3568436bedff8bd6169b8ac6eb50929255e1c7e5631eda656ab15abead09c939"
+      "sha256": "bf7c29e00d54e25bdd16c4664a8e4b075688470eade78cfb720fee7903fcf276"
     },
     {
       "path": "tools/validate-installer.ps1",
