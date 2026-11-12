@@ -1,0 +1,17 @@
+{
+  "private": true,
+  "dependencies": {
+    "@github/copilot": "1.0.109",
+    "cline": "3.0.74",
+    "opencode-ai": "1.19.5"
+  },
+  "overrides": {
+    "simple-git": "4.0.2",
+    "@simple-git/argv-parser": "2.0.1",
+    "@fastify/busboy": "3.2.2",
+    "undici": "8.12.4",
+    "@opentelemetry/core": "2.8.0",
+    "@ai-sdk/provider-utils@^5.0.0": "5.0.1",
+    "zod": "4.6.7"
+  }
+}

@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Relay Workbench — סביבת עבודה בקוד פתוח לסוכני קוד ב־Windows. שיחות, עורך, Git ואישורים, עם בחירת סוכן והעברת משימות.">
+  <meta name="theme-color" content="#236f76">
+  <meta property="og:title" content="Relay Workbench — הקוד שלך. הסוכנים שלך.">
+  <meta property="og:description" content="סביבת עבודה עצמאית לסוכני קוד. קוד פתוח, ממשק עברי, הורדה ל־Windows.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://huxhkuh.github.io/relay-workbench/assets/preview.png">
+  <link rel="canonical" href="https://huxhkuh.github.io/relay-workbench/">
+  <link rel="icon" href="./assets/icon.png">
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./site.js" defer></script>
+  <title>Relay Workbench — סביבת עבודה לסוכני קוד</title>
+</head>
+<body>
+<a class="skip" href="#main" data-i18n="skip">דילוג לתוכן</a>
+<header class="header">
+  <a class="wordmark" href="#" aria-label="Relay Workbench"><img src="./assets/icon.png" width="31" height="31" alt=""><span>Relay <strong>Workbench</strong></span></a>
+  <button class="mobile-menu" id="menu" aria-expanded="false" aria-controls="navigation" data-i18n="menu">תפריט</button>
+  <nav id="navigation" aria-label="ניווט ראשי">
+    <a href="#features" data-i18n="navFeatures">יכולות</a><a href="#workflow" data-i18n="navWorkflow">איך זה עובד</a><a href="#download" data-i18n="navDownload">הורדה</a>
+    <a href="https://github.com/huxhkuh/relay-workbench" class="source-link">GitHub ↗</a>
+    <button id="language" class="language" lang="en" aria-label="Switch to English">EN</button>
+  </nav>
+</header>
+<main id="main">
+  <section class="hero wrap">
+    <p class="eyebrow"><span class="status-dot"></span><span data-i18n="eyebrow">קוד פתוח. סביבת עבודה עצמאית.</span></p>
+    <h1><span data-i18n="headline1">הקוד שלך. הסוכנים שלך.</span><em data-i18n="headline2">סביבת עבודה אחת.</em></h1>
+    <p class="hero-description" data-i18n="description">מקום אחד לשיחה עם סוכני קוד, לעריכת קבצים ולבדיקת השינויים. בחר את הסוכן שמתאים למשימה — והמשך עם אחר כשהעבודה דורשת את זה.</p>
+    <div class="hero-actions">
+      <a class="button primary" data-download href="https://github.com/huxhkuh/relay-workbench/releases/download/v0.6.0/Relay-Workbench-Setup-0.6.0-x64.exe"><span class="download-icon" aria-hidden="true">↓</span><span data-i18n="downloadWindows">הורדה ל־Windows</span></a>
+      <a class="button secondary" href="#features"><span data-i18n="explore">להכיר את סביבת העבודה</span><span aria-hidden="true">↙</span></a>
+    </div>
+    <p class="release-note"><span data-i18n="preview">גרסת פיתוח</span> <span data-version>0.6.0</span><span class="separator">/</span>Windows 10/11 · x64<span class="separator">/</span>MIT<span class="separator">/</span><span data-i18n="interfaceLanguage">ממשק עברי</span></p>
+    <div class="product-frame">
+      <div class="frame-bar"><span class="frame-dots" aria-hidden="true">● ● ●</span><span>Relay Workbench / Desktop</span><span data-i18n="actualScreenshot">צילום מתוך האפליקציה</span></div>
+      <img class="product-image" src="./assets/preview.png" width="1900" height="1250" alt="ממשק Relay Workbench עם שיחות, בחירת סוכן וסביבת עבודה בעברית" fetchpriority="high">
+    </div>
+  </section>
+  <section class="providers wrap" aria-label="סוכנים נתמכים">
+    <div class="section-intro"><p class="eyebrow" data-i18n="providersKicker">הכלים שלך, לבחירתך</p><p data-i18n="providersDescription">בחר סוכן לכל שיחה. לכל ספק נשארים החשבון, המודלים וההרשאות שלו.</p></div>
+    <ul class="provider-list" dir="ltr"><li>Codex</li><li>Claude</li><li>Antigravity</li><li>OpenCode</li><li>Cline</li><li>Copilot</li><li>Gemini</li></ul>
+    <p class="small" data-i18n="providersFootnote">אפשר לחבר גם סוכן ACP מקומי. כלי הספקים והחשבונות מותקנים ומוגדרים בנפרד.</p>
+  </section>
+  <section id="workflow" class="workflow section">
+    <div class="wrap workflow-grid">
+      <div class="workflow-copy">
+        <p class="eyebrow" data-i18n="workflowKicker">משיחה ראשונה לשינוי בדוק</p>
+        <h2 data-i18n="workflowTitle">המשימה ממשיכה.<br>גם כשהסוכן מתחלף.</h2>
+        <p data-i18n="workflowText">התחל בתיקיית הפרויקט שלך. עבוד עם הסוכן שבחרת, אשר פעולות ובדוק את הקבצים. כשתרצה זווית נוספת, הכן טיוטת העברה שאפשר לקרוא ולערוך לפני השליחה.</p>
+        <a class="inline-link" href="https://github.com/huxhkuh/relay-workbench/blob/main/FEATURE-PARITY.md"><span data-i18n="workflowDocs">מפת היכולות המלאה</span> ↗</a>
+      </div>
+      <div class="flow-demo">
+        <div class="demo-topline"><span data-i18n="example">תרחיש לדוגמה</span><span class="mono">PROJECT / app</span></div>
+        <div class="step-tabs" role="tablist" aria-label="שלבי עבודה לדוגמה">
+          <button role="tab" id="step-0" data-step="0" aria-selected="true" aria-controls="step-panel"><span>01</span><span data-i18n="step1">בחירה</span></button>
+          <button role="tab" id="step-1" data-step="1" aria-selected="false" aria-controls="step-panel" tabindex="-1"><span>02</span><span data-i18n="step2">בדיקה</span></button>
+          <button role="tab" id="step-2" data-step="2" aria-selected="false" aria-controls="step-panel" tabindex="-1"><span>03</span><span data-i18n="step3">העברה</span></button>
+        </div>
+        <div id="step-panel" role="tabpanel" aria-labelledby="step-0">
+          <div class="agent-line"><span class="agent-avatar" aria-hidden="true">C</span><div><strong id="demo-agent">Codex</strong><p id="demo-role">תכנון ושינוי ראשוני</p></div><span class="draft-badge" data-i18n="exampleBadge">דוגמה</span></div>
+          <p class="demo-prompt" id="demo-prompt">״הוסף טופס יצירת קשר לפרויקט.״</p>
+          <div class="file-line"><span class="file-icon" aria-hidden="true">⌘</span><code>src/contact.js</code><span id="demo-action">בחירת הפרויקט והגדרת המשימה</span></div>
+          <p class="demo-explanation" id="demo-explanation">בחר תיקייה וסוכן, ושלח משימה במילים שלך. השיחה נשארת משויכת לסוכן שנבחר.</p>
+        </div>
+        <p class="demo-disclaimer" data-i18n="demoDisclaimer">המחשה בלבד. הדוגמה באתר אינה מפעילה סוכן או שולחת מידע.</p>
+      </div>
+    </div>
+  </section>
+  <section id="features" class="features section wrap">
+    <div class="features-heading"><p class="eyebrow" data-i18n="featuresKicker">כל מה שצריך סביב השיחה</p><h2 data-i18n="featuresTitle">לא רק תשובה.<br>גם הדרך לעבוד איתה.</h2><p data-i18n="featuresIntro">הכלים שבין ההנחיה לתוצאה נמצאים באותה סביבת עבודה — בלי להסתיר מה השתנה בדרך.</p></div>
+    <div class="feature-row">
+      <div class="feature-index">01 / EDIT</div>
+      <div><h3 data-i18n="editorTitle">הקבצים וההקשר, ליד השיחה.</h3><p data-i18n="editorText">עורך עם לשוניות והדגשת קוד, חיפוש בפרויקט, השוואת עריכה ושמירה עם זיהוי שינויים חיצוניים. צרף קובץ לטיוטה כשצריך לתת לסוכן הקשר נוסף.</p></div>
+      <div class="code-card" dir="ltr" aria-label="דוגמת קוד להמחשת העורך"><div class="code-tab">contact.js <span>JS</span></div><pre><span class="line-number">1</span> <span class="code-keyword">export function</span> Contact() {
+<span class="line-number">2</span>   <span class="code-keyword">return</span> {
+<span class="line-number">3</span>     title: <span class="code-string">'Let’s build.'</span>,
+<span class="line-number">4</span>     ready: <span class="code-keyword">true</span>
+<span class="line-number">5</span>   };
+<span class="line-number">6</span> }</pre><p data-i18n="codeIllustration">דוגמה חזותית · עורך CodeMirror באפליקציה</p></div>
+    </div>
+    <div class="feature-row">
+      <div class="feature-index">02 / REVIEW</div>
+      <div><h3 data-i18n="reviewTitle">האישורים נשארים בידיים שלך.</h3><p data-i18n="reviewText">בדוק בקשות להפעלת פקודות ולשינוי קבצים, השב לשאלות והגדר הרשאות. היסטוריה, תוכנית ופעולות הסוכן נשארות נגישות לבדיקה.</p></div>
+      <div class="review-sample"><div class="review-heading"><span class="review-symbol">↗</span><span data-i18n="reviewSampleTitle">בקשת פעולה</span></div><code dir="ltr">git diff -- src/contact.js</code><div class="sample-decisions" aria-hidden="true"><span data-i18n="sampleApprove">אישור</span><span data-i18n="sampleDecline">דחייה</span></div><small data-i18n="reviewSampleNote">המחשה של תהליך האישור</small></div>
+    </div>
+    <div class="feature-row">
+      <div class="feature-index">03 / SHIP</div>
+      <div><h3 data-i18n="gitTitle">שינויים שאפשר לעקוב אחריהם.</h3><p data-i18n="gitText">בדוק diff, הכן stage וצור commit מקומי. אפשר להריץ עד שתי משימות רקע, כל אחת ב־Git worktree נפרד, ולחזור אל השיחה כשהן מסתיימות.</p></div>
+      <div class="branches" dir="ltr"><div><span class="branch-dot"></span><code>codex/interface</code><span class="branch-tag">worktree 01</span></div><div><span class="branch-dot"></span><code>codex/review</code><span class="branch-tag">worktree 02</span></div><p data-i18n="worktreeNote">הפרדת קבצים לכל משימה. זו אינה הפרדת הרשאות של מערכת ההפעלה.</p></div>
+    </div>
+    <div class="extra-features"><span data-i18n="extra1">הוראות וסקילים לפרויקט</span><span data-i18n="extra2">הגדרות MCP</span><span data-i18n="extra3">נקודות שחזור</span><span data-i18n="extra4">אבחון מקומי</span><span data-i18n="extra5">מראה בהיר וכהה</span></div>
+  </section>
+  <section id="download" class="download-section">
+    <div class="wrap download-grid">
+      <div><p class="eyebrow" data-i18n="downloadKicker">מוכנים להתחיל?</p><h2 data-i18n="downloadTitle">סביבת העבודה הבאה שלך.<br>פתוחה לשינויים.</h2><p data-i18n="downloadText">הורד את המתקין, בחר תיקיית פרויקט וחבר את הכלים שלך. קוד האפליקציה זמין לעיון, לשינוי ולתרומה.</p><a class="button download-white" data-download href="https://github.com/huxhkuh/relay-workbench/releases/download/v0.6.0/Relay-Workbench-Setup-0.6.0-x64.exe"><span aria-hidden="true">↓</span><span data-i18n="downloadInstaller">הורדת המתקין ל־Windows</span></a><p class="download-meta">v<span data-version>0.6.0</span> · x64 · <span id="file-size">Windows 10/11</span></p></div>
+      <div class="download-details">
+        <div class="release-line"><span data-i18n="channel">ערוץ הפצה</span><strong data-i18n="channelValue">Developer preview</strong></div>
+        <div class="release-line"><span data-i18n="licenseLabel">רישיון הקוד</span><strong>MIT</strong></div>
+        <div class="release-line"><span data-i18n="signingLabel">חתימת מפרסם</span><strong data-i18n="unsigned">המתקין אינו חתום</strong></div>
+        <div class="checksum"><span>SHA-256</span><code id="checksum" dir="ltr" data-i18n="checksumFallback">חתימות הקבצים זמינות בדף המהדורה</code><button id="copy-hash" hidden data-i18n="copyHash">העתקת החתימה</button><output id="copy-status" aria-live="polite"></output></div>
+        <div class="alternative-links"><a data-portable href="https://github.com/huxhkuh/relay-workbench/releases/download/v0.6.0/Relay-Workbench-0.6.0-x64.zip" data-i18n="portable">גרסה ניידת (ZIP) ↗</a><a href="https://github.com/huxhkuh/relay-workbench/releases" data-i18n="allReleases">כל המהדורות ↗</a></div>
+      </div>
+    </div>
+  </section>
+  <section class="getting-started section wrap" id="setup">
+    <div><p class="eyebrow" data-i18n="setupKicker">מההורדה לשיחה הראשונה</p><h2 data-i18n="setupTitle">שלושה צעדים פשוטים.</h2><a class="inline-link" href="https://github.com/huxhkuh/relay-workbench/blob/main/README.he.md" data-i18n="setupGuide">למדריך ההתחלה המלא ↗</a></div>
+    <ol class="setup-steps"><li><span>01</span><div><h3 data-i18n="setup1Title">התקן את סביבת העבודה</h3><p data-i18n="setup1Text">הפעל את קובץ ה־EXE והשלם את ההתקנה למשתמש הנוכחי. זו גרסת פיתוח ללא חתימת מפרסם.</p></div></li><li><span>02</span><div><h3 data-i18n="setup2Title">חבר סוכן משלך</h3><p data-i18n="setup2Text">התקן כלי סוכן רשמי והתחבר לחשבון שלו. עבור Claude נדרשת גם התקנת SDK נפרדת, כמפורט במדריך.</p></div></li><li><span>03</span><div><h3 data-i18n="setup3Title">בחר פרויקט והתחל לעבוד</h3><p data-i18n="setup3Text">פתח תיקייה, בחר סוכן לשיחה וכתוב את המשימה. בדוק ואשר את הפעולות לפי הצורך.</p></div></li></ol>
+  </section>
+  <section class="faq section wrap">
+    <div><p class="eyebrow" data-i18n="faqKicker">לפני שמורידים</p><h2 data-i18n="faqTitle">כמה דברים שכדאי לדעת.</h2></div>
+    <div class="questions">
+      <details><summary data-i18n="q1">האם השימוש חינם?</summary><p data-i18n="a1">קוד האפליקציה פתוח ברישיון MIT. הגישה למודלים, המכסות והמנויים נשארות באחריות ספקי הסוכנים. האפליקציה אינה מעניקה מכסת AI או עוקפת דרישות חשבון.</p></details>
+      <details><summary data-i18n="q2">האם זו אפליקציה רשמית של הספקים?</summary><p data-i18n="a2">לא. Relay Workbench הוא פרויקט עצמאי. שמות הספקים מציינים חיבורים לכלים שלהם, ולא חסות או שותפות. יכולות זמינות תלויות בכלי ובחשבון.</p></details>
+      <details><summary data-i18n="q3">איפה נשמרים הקבצים והשיחות?</summary><p data-i18n="a3">קבצי הפרויקט נשארים בתיקייה שבחרת. הגדרות, שיחות מקומיות וגיבויים נשמרים בפרופיל המשתמש. משימה שנשלחת לסוכן עשויה להעביר אליו תוכן וקבצים בהתאם לכלי ולספק שבחרת.</p><a href="https://github.com/huxhkuh/relay-workbench/blob/main/PRIVACY.md" data-i18n="privacyLink">מידע נוסף על פרטיות ↗</a></details>
+      <details><summary data-i18n="q4">האם הגרסה מוכנה לכל שימוש?</summary><p data-i18n="a4">זו גרסת פיתוח ל־Windows x64, ללא חתימת מפרסם ובלי עדכונים אוטומטיים. בדיקות ממשק ופרוטוקול אינן אימות חי של כל חשבון ספק. מומלץ לעיין במגבלות ובתוצאות הבדיקות לפני השימוש.</p><a href="https://github.com/huxhkuh/relay-workbench/blob/main/VALIDATION.md" data-i18n="validationLink">מה נבדק בפועל ↗</a></details>
+    </div>
+  </section>
+  <section class="open-source wrap section" id="source"><div><p class="eyebrow" data-i18n="sourceKicker">פתוח, גם מאחורי הממשק</p><h2 data-i18n="sourceTitle">קרא את הקוד.<br>עזור לעצב את ההמשך.</h2></div><div><p data-i18n="sourceText">כל ממשק האפליקציה נבנה ממקור מתוחזק. המאגר כולל הוראות בנייה, בדיקות, הנחיות תרומה ותיעוד של היכולות והמגבלות.</p><a class="button secondary" href="https://github.com/huxhkuh/relay-workbench"><span data-i18n="viewSource">למאגר ב־GitHub</span> ↗</a></div></section>
+</main>
+<footer class="footer wrap"><a class="wordmark" href="#"><img src="./assets/icon.png" width="26" height="26" alt=""><span>Relay Workbench</span></a><p data-i18n="footerNote">סביבת עבודה עצמאית לסוכני קוד. קוד הפרויקט ברישיון MIT; רכיבי צד שלישי כפופים לרישיונותיהם.</p><div><a href="https://github.com/huxhkuh/relay-workbench/blob/main/LICENSE">MIT</a><a href="https://github.com/huxhkuh/relay-workbench/issues" data-i18n="issues">דיווח על תקלה</a><a href="https://github.com/huxhkuh/relay-workbench/blob/main/SECURITY.md" data-i18n="security">אבטחה</a></div></footer>
+</body>
+</html>

@@ -1,0 +1,50 @@
+// Real Electron/IPC/UI test with deterministic provider doubles. No paid calls.
+const {_electron}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
+const fs=require('node:fs'),path=require('node:path'),os=require('node:os');
+const root=path.resolve(__dirname,'..'),release=path.join(root,'release/Boau-Code-'+require('../package.json').version+'-Windows-x64');
+const appRoot=path.join(release,'resources/app'),pkgFile=path.join(appRoot,'package.json');
+const bootstrap=path.join(appRoot,'desktop/test-bootstrap.cjs');
+(async()=>{
+ const original=fs.readFileSync(pkgFile);const pkg=JSON.parse(original);pkg.main='desktop/test-bootstrap.cjs';
+ fs.writeFileSync(bootstrap,`const p=require('./agent-providers.cjs');
+p.providerInfo=async id=>({id,name:id==='claude'?'Claude':'Codex',installed:true,authenticated:true});
+const Catalog=require('./agent-catalog.cjs').AgentCatalog;const originalInfo=Catalog.prototype.info;Catalog.prototype.info=function(id){return id==='antigravity'?Promise.resolve({id,name:'Antigravity',installed:true}):originalInfo.call(this,id);};
+const runner=name=>async ({emit,permission,signal})=>{const ok=await permission('בדיקת פעולה מקומית',{test:true},signal.signal);if(!ok)throw Error('Test permission rejected');emit({type:'text',text:name+'_FIXTURE_OK'});};
+p.runClaude=runner('CLAUDE');p.runAntigravity=runner('ANTIGRAVITY');require('./main.cjs');`);
+ fs.writeFileSync(pkgFile,JSON.stringify(pkg));
+ let app;
+ try{
+  const profile=fs.mkdtempSync(path.join(os.tmpdir(),'boau-e2e-agents-'));const fixture=path.join(profile,'project');fs.mkdirSync(fixture);
+  app=await _electron.launch({executablePath:path.join(release,'Boau-Code.exe'),args:['--user-data-dir='+profile],timeout:30000});
+  await app.evaluate(({dialog},dir)=>{dialog.showOpenDialog=async()=>({canceled:false,filePaths:[dir]});},fixture);
+  const page=await app.firstWindow();page.setDefaultTimeout(30000);const errors=[];page.on('pageerror',e=>errors.push(e.message));
+  await page.getByRole('button',{name:'הוסף תיקייה',exact:true}).click();
+  await page.getByRole('combobox',{name:'סוכן לשיחה',exact:true}).selectOption('claude');
+  await page.waitForFunction(()=>!document.querySelector('.agent-label select')?.disabled&&document.querySelector('.agent-status')?.textContent.includes('סוכן: Claude'));
+  console.log('PASS select Claude');
+  const input=page.locator('.composer textarea');await input.fill('בדיקת חיבור בממשק');await page.getByRole('button',{name:'שלח הודעה',exact:true}).click();
+  await page.getByRole('heading',{name:'הסוכן מבקש אישור לפעולה'}).waitFor();
+  await page.getByRole('button',{name:'לאשר את הפעולה',exact:true}).click();
+  await page.getByText('CLAUDE_FIXTURE_OK',{exact:true}).waitFor();
+  await page.waitForFunction(()=>!document.querySelector('.agent-label select')?.disabled);
+  console.log('PASS Claude turn, approval and rendered answer (mock provider)');
+  await page.getByRole('button',{name:'העבר משימה',exact:true}).click();
+  await page.getByRole('combobox',{name:'סוכן מקבל',exact:true}).selectOption('antigravity');
+  await page.getByRole('button',{name:'הכנת טיוטה לבדיקה',exact:true}).click();
+  const handoff=page.getByLabel('תוכן שיועבר לסוכן הבא',{exact:true});await handoff.waitFor();
+  if(!(await handoff.inputValue()).includes('CLAUDE_FIXTURE_OK'))throw Error('Missing source context');
+  await page.getByRole('button',{name:'פתיחת שיחה עם טיוטת ההעברה',exact:true}).click();
+  await page.waitForFunction(()=>document.querySelector('.agent-label select')?.value==='antigravity'&&!document.querySelector('.agent-label select')?.disabled);
+  if(!(await input.inputValue()).includes('CLAUDE_FIXTURE_OK'))throw Error('Handoff draft not populated');
+  await page.getByRole('button',{name:'שלח הודעה',exact:true}).click();
+  await page.getByRole('button',{name:'לאשר את הפעולה',exact:true}).click();
+  await page.getByText('ANTIGRAVITY_FIXTURE_OK',{exact:true}).waitFor();
+  await page.waitForFunction(()=>!document.querySelector('.agent-label select')?.disabled);
+  console.log('PASS handoff Claude -> Antigravity with visible context (mock providers)');
+  await page.screenshot({path:path.join(root,'qa-agents-handoff.png')});
+  const saved=fs.readdirSync(path.join(profile,'agent-conversations')).filter(n=>n.endsWith('.json')).map(n=>JSON.parse(fs.readFileSync(path.join(profile,'agent-conversations',n))));
+  if(!saved.some(t=>t.provider==='claude'&&t.turns.length===1)||!saved.some(t=>t.provider==='antigravity'&&t.turns.length===1))throw Error('Provider bindings/history missing');
+  if(errors.length)throw Error(errors.join('\n'));
+  console.log('PASS per-conversation agent persistence and no renderer errors');
+ }finally{fs.writeFileSync(pkgFile,original);if(fs.existsSync(bootstrap))fs.unlinkSync(bootstrap);if(app){await app.evaluate(({app})=>app.exit(0)).catch(()=>{});await Promise.race([app.close().catch(()=>{}),new Promise(r=>setTimeout(r,3000))]);}}
+})().then(()=>process.exit(0)).catch(e=>{console.error(e);process.exit(1);});

@@ -1,0 +1,366 @@
+{
+  "fetchedAt": "2026-11-11T18:50:38.0375710Z",
+  "agents": [
+    {
+      "id": "agoragentic-acp",
+      "name": "Agoragentic",
+      "description": "Agent marketplace with 174+ AI capabilities. Browse, invoke, and pay for agent services settled in USDC on Base L2.",
+      "license": "MIT",
+      "repository": "https://github.com/rhein1/agoragentic-integrations",
+      "website": "https://agoragentic.com"
+    },
+    {
+      "id": "amp-acp",
+      "name": "Amp",
+      "description": "ACP wrapper for Amp - the frontier coding agent",
+      "license": "Apache-2.0",
+      "repository": "https://github.com/tao12345666333/amp-acp",
+      "website": null
+    },
+    {
+      "id": "antigravity-acp",
+      "name": "Google Antigravity",
+      "description": "Google’s AI coding agent",
+      "license": "proprietary",
+      "repository": null,
+      "website": "https://antigravity.google/docs/ide/extensions"
+    },
+    {
+      "id": "auggie",
+      "name": "Auggie CLI",
+      "description": "Augment Code's powerful software agent, backed by industry-leading context engine",
+      "license": "proprietary",
+      "repository": "https://github.com/augmentcode/auggie",
+      "website": "https://www.augmentcode.com/"
+    },
+    {
+      "id": "autohand",
+      "name": "Autohand Code",
+      "description": "Autohand Code CLI with native ACP support",
+      "license": "Apache-2.0",
+      "repository": "https://github.com/autohandai/code-cli",
+      "website": "https://github.com/autohandai/code-cli/blob/main/docs/guides/ACP.md"
+    },
+    {
+      "id": "bob",
+      "name": "Bob",
+      "description": "IBM Bob is your AI-Powered Development Partner",
+      "license": "proprietary",
+      "repository": null,
+      "website": "https://bob.ibm.com"
+    },
+    {
+      "id": "claude-acp",
+      "name": "Claude Agent",
+      "description": "ACP wrapper for Anthropic's Claude",
+      "license": "proprietary",
+      "repository": "https://github.com/agentclientprotocol/claude-agent-acp",
+      "website": null
+    },
+    {
+      "id": "cline",
+      "name": "Cline",
+      "description": "Autonomous coding agent CLI - capable of creating/editing files, running commands, using the browser, and more",
+      "license": "Apache-2.0",
+      "repository": "https://github.com/cline/cline",
+      "website": "https://cline.bot/cli"
+    },
+    {
+      "id": "codebuddy-code",
+      "name": "Codebuddy Code",
+      "description": "Tencent Cloud's official intelligent coding tool",
+      "license": "Proprietary",
+      "repository": null,
+      "website": "https://www.codebuddy.cn/cli/"
+    },
+    {
+      "id": "codex-acp",
+      "name": "Codex",
+      "description": "ACP adapter for OpenAI's coding assistant",
+      "license": "Apache-2.0",
+      "repository": "https://github.com/agentclientprotocol/codex-acp",
+      "website": null
+    },
+    {
+      "id": "cortex-code",
+      "name": "Cortex Code",
+      "description": "Snowflake's Cortex Code coding agent",
+      "license": "proprietary",
+      "repository": "https://docs.snowflake.com/en/user-guide/cortex-code/cortex-code",
+      "website": null
+    },
+    {
+      "id": "corust-agent",
+      "name": "Corust Agent",
+      "description": "Co-building with a seasoned Rust partner.",
+      "license": "GPL-3.0-or-later",
+      "repository": "https://github.com/Corust-ai/corust-agent-release",
+      "website": "https://corust.ai/"
+    },
+    {
+      "id": "crow-cli",
+      "name": "crow-cli",
+      "description": "Minimal ACP Native Coding Agent",
+      "license": "MIT",
+      "repository": "https://github.com/crow-cli/crow-cli",
+      "website": "https://crow-ai.dev"
+    },
+    {
+      "id": "cursor",
+      "name": "Cursor",
+      "description": "Cursor's coding agent",
+      "license": "proprietary",
+      "repository": null,
+      "website": "https://cursor.com/docs/cli/acp"
+    },
+    {
+      "id": "deepagents",
+      "name": "DeepAgents",
+      "description": "Batteries-included AI coding and general purpose agent powered by LangChain.",
+      "license": "MIT",
+      "repository": "https://github.com/langchain-ai/deepagentsjs",
+      "website": "https://docs.langchain.com/oss/javascript/deepagents/overview"
+    },
+    {
+      "id": "devin",
+      "name": "Devin",
+      "description": "Devin CLI coding agent by Cognition",
+      "license": "proprietary",
+      "repository": "https://github.com/CognitionAI/devin-cli",
+      "website": "https://docs.devin.ai/cli"
+    },
+    {
+      "id": "dimcode",
+      "name": "DimCode",
+      "description": "A coding agent that puts leading models at your command.",
+      "license": "proprietary",
+      "repository": null,
+      "website": "https://dimagent.cn/"
+    },
+    {
+      "id": "dirac",
+      "name": "Dirac",
+      "description": "Reduces API costs by more than 50%, produces better and faster work. Uses Hash anchored parallel edits, AST manipulation and a whole lot of neat optimizations. Fully Open Source.",
+      "license": "Apache-2.0",
+      "repository": "https://github.com/dirac-run/dirac",
+      "website": "https://dirac.run"
+    },
+    {
+      "id": "factory-droid",
+      "name": "Factory Droid",
+      "description": "Factory Droid - AI coding agent powered by Factory AI",
+      "license": "proprietary",
+      "repository": null,
+      "website": "https://factory.ai/product/cli"
+    },
+    {
+      "id": "fast-agent",
+      "name": "fast-agent",
+      "description": "Code and build agents with comprehensive multi-provider support",
+      "license": "Apache 2.0",
+      "repository": "https://github.com/evalstate/fast-agent",
+      "website": "https://fast-agent.ai"
+    },
+    {
+      "id": "gemini",
+      "name": "Gemini CLI",
+      "description": "Google's official CLI for Gemini",
+      "license": "Apache-2.0",
+      "repository": "https://github.com/google-gemini/gemini-cli",
+      "website": "https://geminicli.com"
+    },
+    {
+      "id": "github-copilot-cli",
+      "name": "GitHub Copilot",
+      "description": "GitHub's AI pair programmer",
+      "license": "proprietary",
+      "repository": "https://github.com/github/copilot-cli",
+      "website": "https://github.com/features/copilot/cli/"
+    },
+    {
+      "id": "glm-acp-agent",
+      "name": "GLM Agent",
+      "description": "ACP agent powered by Zhipu AI's GLM Coding Plan models (glm-5.1, glm-5-turbo, glm-4.7, glm-4.5-air). Supports streaming, tool calls, mid-session model switching, image input via Z.AI Coding Plan Vision MCP, and session load/fork/resume with on-disk persistence.",
+      "license": "Apache-2.0",
+      "repository": "https://github.com/stefandevo/glm-acp-agent",
+      "website": null
+    },
+    {
+      "id": "goose",
+      "name": "goose",
+      "description": "A local, extensible, open source AI agent that automates engineering tasks",
+      "license": "Apache-2.0",
+      "repository": "https://github.com/block/goose",
+      "website": "https://block.github.io/goose/"
+    },
+    {
+      "id": "grok-build",
+      "name": "Grok Build",
+      "description": "xAI's coding agent and CLI",
+      "license": "proprietary",
+      "repository": null,
+      "website": "https://x.ai/cli"
+    },
+    {
+      "id": "harn",
+      "name": "Harn",
+      "description": "Harn runs .harn agent pipelines as a native ACP coding agent over stdio.",
+      "license": "Apache-2.0",
+      "repository": "https://github.com/burin-labs/harn",
+      "website": "https://harnlang.com"
+    },
+    {
+      "id": "junie",
+      "name": "Junie",
+      "description": "AI Coding Agent by JetBrains",
+      "license": "proprietary",
+      "repository": "https://github.com/JetBrains/junie-acp-release",
+      "website": "https://junie.jetbrains.com"
+    },
+    {
+      "id": "kilo",
+      "name": "Kilo",
+      "description": "The open source coding agent",
+      "license": "MIT",
+      "repository": "https://github.com/Kilo-Org/kilocode",
+      "website": "https://kilo.ai/"
+    },
+    {
+      "id": "kimchi",
+      "name": "Kimchi",
+      "description": "Coding agent powered by multi-model orchestration",
+      "license": "Apache-2.0",
+      "repository": "https://github.com/getkimchi/kimchi",
+      "website": "https://kimchi.dev"
+    },
+    {
+      "id": "kimi",
+      "name": "Kimi CLI (Legacy)",
+      "description": "Archived by Moonshot AI. Use Kimi Code instead",
+      "license": "MIT",
+      "repository": "https://github.com/MoonshotAI/kimi-cli",
+      "website": "https://moonshotai.github.io/kimi-cli/"
+    },
+    {
+      "id": "kimi-code",
+      "name": "Kimi Code",
+      "description": "Moonshot AI's next-gen coding agent",
+      "license": "MIT",
+      "repository": "https://github.com/MoonshotAI/kimi-code",
+      "website": "https://moonshotai.github.io/kimi-code/"
+    },
+    {
+      "id": "kiro",
+      "name": "Kiro CLI",
+      "description": "The Kiro coding agent",
+      "license": "proprietary",
+      "repository": "https://github.com/kirodotdev/Kiro",
+      "website": "https://kiro.dev/docs/cli/acp/"
+    },
+    {
+      "id": "minimax-code",
+      "name": "MiniMax Code",
+      "description": "MiniMax Code is an AI coding agent with Agent Client Protocol support.",
+      "license": "MIT",
+      "repository": null,
+      "website": "https://agent.minimax.io"
+    },
+    {
+      "id": "minion-code",
+      "name": "Minion Code",
+      "description": "An enhanced AI code assistant built on the Minion framework with rich development tools",
+      "license": "AGPL-3.0",
+      "repository": "https://github.com/femto/minion-code",
+      "website": null
+    },
+    {
+      "id": "mistral-vibe",
+      "name": "Mistral Vibe",
+      "description": "Mistral's open-source coding assistant",
+      "license": "Apache-2.0",
+      "repository": "https://github.com/mistralai/mistral-vibe",
+      "website": "https://mistral.ai/products/vibe"
+    },
+    {
+      "id": "nova",
+      "name": "Nova",
+      "description": "Nova by Compass AI - a fully-fledged software engineer at your command",
+      "license": "proprietary",
+      "repository": "https://github.com/Compass-Agentic-Platform/nova",
+      "website": "https://www.compassap.ai/portfolio/nova.html"
+    },
+    {
+      "id": "opencode",
+      "name": "OpenCode",
+      "description": "The open source coding agent",
+      "license": "MIT",
+      "repository": "https://github.com/anomalyco/opencode",
+      "website": "https://opencode.ai"
+    },
+    {
+      "id": "opencode-v2",
+      "name": "OpenCode V2",
+      "description": "The open source coding agent, version 2",
+      "license": "MIT",
+      "repository": "https://github.com/anomalyco/opencode",
+      "website": "https://opencode.ai"
+    },
+    {
+      "id": "pi-acp",
+      "name": "pi ACP",
+      "description": "ACP adapter for pi coding agent",
+      "license": "MIT",
+      "repository": "https://github.com/svkozak/pi-acp",
+      "website": null
+    },
+    {
+      "id": "poolside",
+      "name": "Poolside",
+      "description": "Poolside's coding agent",
+      "license": "proprietary",
+      "repository": "https://github.com/poolsideai/pool",
+      "website": "https://poolside.ai"
+    },
+    {
+      "id": "qoder",
+      "name": "Qoder CLI",
+      "description": "AI coding assistant with agentic capabilities",
+      "license": "proprietary",
+      "repository": null,
+      "website": "https://qoder.com"
+    },
+    {
+      "id": "qwen-code",
+      "name": "Qwen Code",
+      "description": "Alibaba's Qwen coding assistant",
+      "license": "Apache-2.0",
+      "repository": "https://github.com/QwenLM/qwen-code",
+      "website": "https://qwenlm.github.io/qwen-code-docs/en/users/overview"
+    },
+    {
+      "id": "sigit",
+      "name": "siGit Code",
+      "description": "Local-first coding agent. Runs entirely on your machine with optional on-device LLM inference via Onde.",
+      "license": "Apache-2.0",
+      "repository": "https://github.com/getsigit/sigit",
+      "website": "https://github.com/getsigit/sigit"
+    },
+    {
+      "id": "stakpak",
+      "name": "Stakpak",
+      "description": "Open-source DevOps agent in Rust with enterprise-grade security",
+      "license": "Apache-2.0",
+      "repository": "https://github.com/stakpak/agent",
+      "website": "https://stakpak.dev"
+    },
+    {
+      "id": "vtcode",
+      "name": "VT Code",
+      "description": "An open-source coding agent with LLM-native code understanding and robust shell safety. Supports multiple LLM providers with automatic failover and efficient context management.",
+      "license": "MIT",
+      "repository": "https://github.com/vinhnx/VTCode",
+      "website": "https://github.com/vinhnx/VTCode/blob/main/docs/guides/zed-acp.md"
+    }
+  ],
+  "source": "https://cdn.agentclientprotocol.com/registry/v1/latest/registry.json"
+}

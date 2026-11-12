@@ -1,0 +1,17 @@
+release/
+qa-*.png
+node_modules/
+
+desktop/vendor/
+*.log
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+coverage/
+user-data/
+agent-conversations/
+background-tasks/
+
+dist/

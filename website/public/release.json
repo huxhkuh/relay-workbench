@@ -1,0 +1,18 @@
+{
+  "version": "0.6.0",
+  "channel": "developer-preview",
+  "platform": "Windows 10/11 x64",
+  "signed": false,
+  "installer": {
+    "filename": "Relay-Workbench-Setup-0.6.0-x64.exe",
+    "bytes": 123523029,
+    "sha256": "8fe2bcbcfbd8724e2170e19edff7f41300e494d434d1763ae97e9eed9d70a2fb",
+    "url": "https://github.com/huxhkuh/relay-workbench/releases/download/v0.6.0/Relay-Workbench-Setup-0.6.0-x64.exe"
+  },
+  "portable": {
+    "filename": "Relay-Workbench-0.6.0-x64.zip",
+    "bytes": 156731569,
+    "sha256": "1536d1a751026772d2b5d346ab5efc84d850257bf8cd55e366eaace5c74cc65e",
+    "url": "https://github.com/huxhkuh/relay-workbench/releases/download/v0.6.0/Relay-Workbench-0.6.0-x64.zip"
+  }
+}

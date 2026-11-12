@@ -1,0 +1,8 @@
+const fs=require('node:fs'),os=require('node:os'),path=require('node:path');
+const {AcpClient,executable}=require('../desktop/agent-providers.cjs');
+(async()=>{const cwd=fs.mkdtempSync(path.join(os.tmpdir(),'boau-acp-'));const logFile=path.join(cwd,'diagnostic.log');const c=new AcpClient(executable('antigravity'),cwd,undefined,logFile);
+ c.on('notification',m=>{if(m.method==='session/update'){const u=m.params?.update||{};console.log(JSON.stringify({kind:u.sessionUpdate,contentType:u.content?.type,text:u.content?.text?.slice(0,220)}));}});
+ c.on('request',m=>{console.log('REQUEST',m.method);c.respond(m.id,{outcome:{outcome:'cancelled'}});});
+ c.on('diagnostic',text=>console.log('DIAGNOSTIC',text.slice(-3000)));
+ try{await c.request('initialize',{protocolVersion:1,clientCapabilities:{},clientInfo:{name:'boau-code',version:'0.3.0'}});const s=await c.request('session/new',{cwd,mcpServers:[]});await c.request('session/set_mode',{sessionId:s.sessionId,modeId:'plan'});const result=await c.request('session/prompt',{sessionId:s.sessionId,prompt:[{type:'text',text:'Reply with exactly BOAU_ANTIGRAVITY_OK. Do not use tools.'}]},120000);console.log('RESULT',JSON.stringify(result));}finally{await c.close();if(fs.existsSync(logFile)){const sanitize=require('../desktop/productivity.cjs').sanitizeDiagnostic;const lines=fs.readFileSync(logFile,'utf8').split('\n').filter(l=>/level=ERROR|"level":"error"|error generating|API error/i.test(l)).slice(-5);console.log(lines.map(l=>sanitize(l).replace(/https?:\/\/\S+/g,'[URL]').slice(0,1200)).join('\n'));}}
+})().catch(e=>{console.error(e.message);process.exitCode=1;});
