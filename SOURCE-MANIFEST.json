@@ -129,7 +129,7 @@
     },
     {
       "path": "tests/productivity.test.cjs",
-      "sha256": "cbd19b5f3fe042e65b950b8a5bcf428ac4b274f166bf8b67083f4eaabda29640"
+      "sha256": "8d1102436a23e63c18faeb839107906b102af3304129296878303709e3c4eec0"
     },
     {
       "path": "tests/renderer.test.cjs",
